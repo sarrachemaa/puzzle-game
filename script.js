@@ -31,10 +31,10 @@ function createPuzzle() {
         const col = pos % 3;
 
         tile.style.backgroundImage = `url('${images[currentLevel]}')`;
-        tile.style.backgroundSize = '300px 300px';
-        tile.style.backgroundPosition = `-${col * 100}px -${row * 100}px`;
+        tile.style.backgroundSize = puzzle.clientWidth + 'px ' + puzzle.clientHeight + 'px'; // 🟢 ICI
+        tile.style.backgroundPosition = `-${col * (puzzle.clientWidth / 3)}px -${row * (puzzle.clientHeight / 3)}px`;
 
-        tile.setAttribute('data-correct', pos); // Vraie position de la tuile
+        tile.setAttribute('data-correct', pos);
 
         tile.addEventListener('dragstart', handleDragStart);
         tile.addEventListener('dragover', handleDragOver);
@@ -43,6 +43,7 @@ function createPuzzle() {
         puzzle.appendChild(tile);
     });
 }
+
 
 function handleDragStart(e) {
     draggedTile = e.target;
