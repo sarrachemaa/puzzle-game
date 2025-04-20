@@ -5,11 +5,11 @@ const checkButton = document.getElementById('checkButton');
 let currentLevel = 0;
 
 const images = [
-    'images/level1.jpg',
-    'images/level2.jpg',
-    'images/level3.jpg',
-    'images/level4.jpg',
-    'images/level5.jpg'
+    'level1.jpg',
+    'level2.jpg',
+    'level3.jpg',
+    'level4.jpg',
+    'level5.jpg'
 ];
 
 let draggedTile = null;
